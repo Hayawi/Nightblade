@@ -1,12 +1,14 @@
 package com.nightblade;
 
-import com.badlogic.gdx.ApplicationAdapter;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.nightblade.backend.PlayerInput;
 
-public class Nightblade extends ApplicationAdapter {
+public class Nightblade extends Game {
+	PlayerInput pInput;
 	SpriteBatch batch;
 	Texture img;
 	
@@ -14,8 +16,17 @@ public class Nightblade extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
+		
+		pInput = new PlayerInput();
+		Gdx.input.setInputProcessor(pInput);
 	}
 
+	public void update (){
+		if (pInput.isKeyUp()){
+			
+		}
+	}
+	
 	@Override
 	public void render () {
 		Gdx.gl.glClearColor(1, 0, 0, 1);
@@ -23,5 +34,6 @@ public class Nightblade extends ApplicationAdapter {
 		batch.begin();
 		batch.draw(img, 0, 0);
 		batch.end();
+		update();
 	}
 }
