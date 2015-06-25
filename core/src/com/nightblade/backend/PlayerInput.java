@@ -5,10 +5,10 @@ import com.badlogic.gdx.InputAdapter;
 
 public class PlayerInput extends InputAdapter {
 
-	boolean keyUp = false;
-	boolean keyDown = false;
-	boolean keyLeft = false;
-	boolean keyRight = false;
+	private boolean keyUp = false;
+	private boolean keyDown = false;
+	private boolean keyLeft = false;
+	private boolean keyRight = false;
 
 	
 	@Override
